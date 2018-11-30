@@ -1,0 +1,14 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+ 
+ .ni_success
+ {
+	color:green;
+ }
+ 
+ .ni_error
+ {
+	 color:red;
+ }
