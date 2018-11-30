@@ -1,5 +1,5 @@
 # NovarumImporter
-JSON importer plugin for Wordpress. It helps you call any REST Api endpoint and import JSON response to wordpress
+JSON importer plugin for Wordpress. It helps you call any REST Api endpoint and import JSON response to wordpress. It supports custom post types as well.
 
 ## Handling Api Requests ##
 Go to Settings->Novarum Importer and open "Request Options" tab. From this tab you can define how the api should be called and what parameters should be passed. Note that, this plugin uses PHP curl extension so it has to be enabled on the server side. Most of the hosting providers enable this feature by default.
@@ -19,3 +19,14 @@ Content-Type: application/x-www-form-urlencoded; charset=utf-8
 Host: www.example.com
 
 User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:28.0) Gecko/20100101 Firefox/28.0
+
+## Notes ##
+This plugin is under heavy development. If you have any suggestions, comments, or issues please send it to team@novarumsoftware.com or open a request on Github.
+
+## TODO ##
+
+* Make the api calls in the background
+* Realtime status display for import process
+* Allow api calls to be scheduled
+* Special settings for paginations (either with page value or with offset,limit combination)
+
