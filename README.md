@@ -24,7 +24,7 @@ User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:28.0) Gecko/20100101 Firefo
 This plugin is under heavy development. If you have any suggestions, comments, or issues please send it to team@novarumsoftware.com or open a request on Github.
 
 ## TODO ##
-
+* Allow Meta tags and taxonomies to be imported as well
 * Make the api calls in the background
 * Realtime status display for import process
 * Allow api calls to be scheduled
