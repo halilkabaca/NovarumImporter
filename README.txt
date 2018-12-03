@@ -57,7 +57,7 @@ Then you can set Response.data as the array key
 
 
 ## Notes ##
-This plugin is under heavy development. If you have any suggestions, comments, or issues please send it to team@novarumsoftware.com or open a request on Github.
+This plugin is under heavy development. If you have any suggestions, comments, or issues please send it to team@novarumsoftware.com or open a request.
 
 ## TODO ##
 * Allow Meta tags and taxonomies to be imported as well
@@ -69,8 +69,10 @@ This plugin is under heavy development. If you have any suggestions, comments, o
 
 
 == Installation ==
-Install and active the plugin
-Go to Settings->Novarum Importer, set up the request and set Importing options
+1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Go to Settings->Novarum Importer, set up the request and set Importing options
+
 
 == Frequently Asked Questions ==
  
