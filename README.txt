@@ -7,7 +7,7 @@ Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-JSON importer plugin for Wordpress. It helps you call any REST Api endpoint and import JSON response to wordpress. It supports custom post types as well.
+JSON importer plugin for Wordpress. It helps calling any REST Api and importing JSON response to wordpress. It supports custom post types as well.
 
 == Description ==
 # NovarumImporter
