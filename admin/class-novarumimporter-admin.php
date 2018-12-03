@@ -134,7 +134,9 @@ class Novarumimporter_Admin {
 		  if($isJsonValid)
 		  {
 			 update_option('ni_isJsonValid', 1 , false );
-			 update_option('ni_responseKeys', serialize($this->parseKeys($test_response)) , false );
+			 
+			 //Halilk: not implemented yet! This is to determine the keys
+			 //update_option('ni_responseKeys', serialize($this->parseKeys($test_response)) , false );
 		  }
 		  else
 			 update_option('ni_isJsonValid', 0 , false );
@@ -381,14 +383,24 @@ class Novarumimporter_Admin {
 		$errorCount = 0;
 		
 		
-		$arrayKey = explode(".",$this->optionValues['ni_settings_arraykey']);
 		$arrayData = $parsedData;
 		
-		foreach($arrayKey as $eachKey)
+		if(stripos($this->optionValues['ni_settings_arraykey'],".") > 0)
 		{
-			$arrayData = $arrayData[$eachKey];
+		  //It's a nested array
+		  $arrayKey = explode(".",$this->optionValues['ni_settings_arraykey']);
+		  
+		  foreach($arrayKey as $eachKey)
+		  {
+				$arrayData = $arrayData[$eachKey];
+		  }
 		}
-		
+		elseif( trim($this->optionValues['ni_settings_arraykey']) != "" )
+		{
+			//There is some value but not nested
+			$arrayData = $arrayData[ $this->optionValues['ni_settings_arraykey'] ];
+		}
+
 		
 		foreach($arrayData as $eachData)
 		{
