@@ -1,11 +1,14 @@
 === Novarum Importer ===
 Contributors: novarum
 Tags: json, import, rest api
+Author URI: https://www.novarumsoftware.com/
+Author: Novarum
 Requires at least: 4.9.0
 Tested up to: 4.9.8
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Stable tag: trunk
 
 JSON importer plugin for Wordpress. It helps calling any REST Api and importing JSON response to wordpress. It supports custom post types as well.
 
