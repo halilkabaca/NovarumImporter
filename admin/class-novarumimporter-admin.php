@@ -119,6 +119,9 @@ class Novarumimporter_Admin {
 		if( isset( $_GET[ 'tab' ] ) ) {
 		   $active_tab = $_GET[ 'tab' ];
 		}
+		
+		if($active_tab == '')
+		   $active_tab = 'request_options';
 
 		$this->saveOptions();		
 		$this->getOptions();		
