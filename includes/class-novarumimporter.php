@@ -67,10 +67,10 @@ class Novarumimporter {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'PLUGIN_NAME_VERSION' ) ) {
-			$this->version = PLUGIN_NAME_VERSION;
+		if ( defined( 'NOVARUM_IMPORTER_VERSION' ) ) {
+			$this->version = NOVARUM_IMPORTER_VERSION;
 		} else {
-			$this->version = '1.0.0';
+			$this->version = '1.0.1';
 		}
 		$this->plugin_name = 'novarumimporter';
 
@@ -154,10 +154,10 @@ class Novarumimporter {
 
 		$plugin_admin = new Novarumimporter_Admin( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'novarumimporter_enqueue_styles' );
+		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'novarumimporter_enqueue_scripts' );
 
-	    $this->loader->add_action( 'admin_menu', $plugin_admin, 'defineSettings' );
+	    $this->loader->add_action( 'admin_menu', $plugin_admin, 'novarumimporter_defineSettings' );
 		 
 		
 	}
@@ -173,8 +173,8 @@ class Novarumimporter {
 
 		$plugin_public = new Novarumimporter_Public( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'novarumimporter_enqueue_styles' );
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'novarumimporter_enqueue_scripts' );
 
 	}
 

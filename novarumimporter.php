@@ -3,8 +3,7 @@
 /**
  * The plugin bootstrap file
  *
- * This file is read by WordPress to generate the plugin information in the plugin
- * admin area. This file also includes all of the dependencies used by the plugin,
+ * This file is Novarum Importer plugin bootstrap file. It also includes all of the dependencies used by the plugin,
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
@@ -16,7 +15,7 @@
  * Plugin Name:       Novarum JSON Importer
  * Plugin URI:        https://github.com/halilkabaca/NovarumImporter
  * Description:       This free plugin helps you call any endpoint and import JSON data to wordpress
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Halil Kabaca
  * Author URI:        www.novarumsoftware.com
  * License:           GPL-2.0+
@@ -25,7 +24,6 @@
  * Domain Path:       /languages
  */
 
- ini_set('display_errors',1);
  
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
@@ -34,10 +32,8 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * Currently plugin version.
- * Start at version 1.0.0 and use SemVer - https://semver.org
- * Rename this for your plugin and update it as you release new versions.
  */
-define( 'PLUGIN_NAME_VERSION', '1.0.0' );
+define( 'NOVARUM_IMPORTER_VERSION', '1.0.1' );
 
 /**
  * The code that runs during plugin activation.

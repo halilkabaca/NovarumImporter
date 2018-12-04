@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The admin-specific functionality of the plugin.
+ * The admin-specific functionality of Novarum Importer plugin.
  *
  * @link       www.novarumsoftware.com
  * @since      1.0.0
@@ -13,8 +13,8 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * Defines the plugin name, version, and two examples hooks for how to
- * enqueue the admin-specific stylesheet and JavaScript.
+ * It divides the functionality as Request and Import part
+ * Handles the logic based on what's submitted on the forms
  *
  * @package    Novarumimporter
  * @subpackage Novarumimporter/admin
@@ -63,7 +63,7 @@ class Novarumimporter_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_styles() {
+	public function novarumimporter_enqueue_styles() {
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -86,7 +86,7 @@ class Novarumimporter_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_scripts() {
+	public function novarumimporter_enqueue_scripts() {
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -104,13 +104,13 @@ class Novarumimporter_Admin {
 
 	}
 	
-	public function defineSettings()
+	public function novarumimporter_defineSettings()
 	{		
-		add_options_page( 'Novarum Importer Options', 'Novarum Importer', 'manage_options', 'Novarumimporter_settings', array($this,'my_plugin_options') );
+		add_options_page( 'Novarum Importer Options', 'Novarum Importer', 'manage_options', 'Novarumimporter_settings', array($this,'novarumimporter_options') );
 			 
 	}
 
-	public function my_plugin_options() 
+	public function novarumimporter_options() 
 	{
 		if ( !current_user_can( 'manage_options' ) )  {
 			wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
@@ -123,16 +123,16 @@ class Novarumimporter_Admin {
 		if($active_tab == '')
 		   $active_tab = 'request_options';
 
-		$this->saveOptions();		
-		$this->getOptions();		
+		$this->novarumimporter_saveOptions();		
+		$this->novarumimporter_getOptions();		
 
 		$test_response = "";
 		$isJsonValid = false;
 		
 		if(isset($_POST['ni_settings_test_connection']))
 		{
-		  $test_response = $this->testConnection();
-		  $isJsonValid = $this->isJsonValid($test_response);
+		  $test_response = $this->novarumimporter_testConnection();
+		  $isJsonValid = $this->novarumimporter_isJsonValid($test_response);
 		  
 		  if($isJsonValid)
 		  {
@@ -147,9 +147,9 @@ class Novarumimporter_Admin {
 		}
 		else if(isset($_POST['ni_settings_import']))
 		{
-			$test_response = $this->testConnection();
+			$test_response = $this->novarumimporter_testConnection();
 			
-			$this->results = $this->importData($test_response);
+			$this->results = $this->novarumimporter_importData($test_response);
 			
 		}
 		
@@ -183,12 +183,12 @@ class Novarumimporter_Admin {
 	}	
 	
 	
-	public function isJsonValid($string) {
+	public function novarumimporter_isJsonValid($string) {
        json_decode($string);
        return (json_last_error() == JSON_ERROR_NONE);
 	}
 	
-	public function testConnection()
+	public function novarumimporter_testConnection()
 	{
 		$handle = curl_init();
 		curl_setopt($handle, CURLOPT_URL, $this->optionValues['ni_settings_request_url']);
@@ -231,7 +231,7 @@ class Novarumimporter_Admin {
 	}
 	
 	
-	public function saveOptions()
+	public function novarumimporter_saveOptions()
 	{
 		if(isset($_POST['ni_settings_request_url']))
 		{
@@ -301,7 +301,7 @@ class Novarumimporter_Admin {
 		
 	}
 	
-	public function getOptions()
+	public function novarumimporter_getOptions()
 	{
 		$this->optionValues = array();
 		
@@ -325,7 +325,7 @@ class Novarumimporter_Admin {
 		
 	}
 	
-	public function parseKeys($response)
+	public function novarumimporter_parseKeys($response)
 	{
 		$parsedData = json_decode($response,true);
 		$keyArray = array_keys($parsedData);
@@ -379,7 +379,7 @@ class Novarumimporter_Admin {
 	}
 	
 	
-	public function importData($response)
+	public function novarumimporter_importData($response)
 	{
 		$parsedData = json_decode($response,true);
 		$successCount = 0;
