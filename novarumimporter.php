@@ -14,7 +14,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Novarum JSON Importer
- * Plugin URI:        www.novarumsoftware.com
+ * Plugin URI:        https://github.com/halilkabaca/NovarumImporter
  * Description:       This free plugin helps you call any endpoint and import JSON data to wordpress
  * Version:           1.0.0
  * Author:            Halil Kabaca

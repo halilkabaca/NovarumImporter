@@ -1,8 +1,8 @@
 === Novarum Importer ===
+Plugin Name: Novarum Importer
+Plugin URI: https://github.com/halilkabaca/NovarumImporter
 Contributors: novarum
 Tags: json, import, rest api
-Author URI: https://www.novarumsoftware.com/
-Author: Novarum
 Requires at least: 4.9.0
 Tested up to: 4.9.8
 Requires PHP: 5.6
