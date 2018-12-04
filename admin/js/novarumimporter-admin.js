@@ -31,9 +31,9 @@ jQuery(document).ready(function($){
 	jQuery('#ni_settings_request_authtype').on('change', function() {
 		
 		if(this.value == 2)
-		   jQuery('#div_auth').show();
+		   jQuery('#ni_div_auth').show();
 	    else
-		   jQuery('#div_auth').hide();
+		   jQuery('#ni_div_auth').hide();
 		
 	});
 	
@@ -41,23 +41,23 @@ jQuery(document).ready(function($){
 	jQuery('#ni_settings_request_type').on('change', function() {
 		
 		if(this.value == 'GET')
-		   jQuery('#div_postfields').hide();
+		   jQuery('#ni_div_postfields').hide();
 	    else
-		   jQuery('#div_postfields').show();
+		   jQuery('#ni_div_postfields').show();
 		
 	});
 	
 	
 	//startup checks
 	if(jQuery('#ni_settings_request_authtype').val() == 2)
-	   jQuery('#div_auth').show();
+	   jQuery('#ni_div_auth').show();
 	else
-	   jQuery('#div_auth').hide();	
+	   jQuery('#ni_div_auth').hide();	
    
 	if(jQuery('#ni_settings_request_type').val() == 'GET')
-	   jQuery('#div_postfields').hide();
+	   jQuery('#ni_div_postfields').hide();
 	else
-	   jQuery('#div_postfields').show();
+	   jQuery('#ni_div_postfields').show();
 	
 	 
 });

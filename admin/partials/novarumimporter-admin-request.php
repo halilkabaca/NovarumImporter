@@ -32,7 +32,7 @@
 			  </select>
 			</p>
 			
-			<div id="div_postfields" style="display:none">
+			<div id="ni_div_postfields" style="display:none">
 				<p><strong><?php _e("Fields: (format: key1=value1&key2=value2)", 'Novarumimporter' ); ?></strong></p>
 				<p>			
 				  <textarea name="ni_settings_fields" style="width:50%;height:100px;"><?php echo $this->optionValues['ni_settings_fields']; ?></textarea>
@@ -47,7 +47,7 @@
 			  </select>
 			</p>
 			
-			<div id="div_auth" style="display:none">
+			<div id="ni_div_auth" style="display:none">
 			  <p><strong><?php _e("Username:", 'Novarumimporter' ); ?></strong></p>
 			  <p>
 		        <input type="text" id="ni_settings_request_username" name="ni_settings_request_username" value="<?php echo $this->optionValues['ni_settings_request_username']; ?>" style="width:30%;">
