@@ -4,7 +4,7 @@ Plugin URI: https://github.com/halilkabaca/NovarumImporter
 Contributors: novarum
 Tags: json, import, rest api
 Requires at least: 4.9.0
-Tested up to: 4.9.8
+Tested up to: 5.0
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -72,7 +72,7 @@ This plugin is under heavy development. If you have any suggestions, comments, o
 
 
 == Installation ==
-1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
+1. Upload Novarum Importer plugin folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Go to Settings->Novarum Importer, set up the request and set Importing options
 
@@ -93,4 +93,11 @@ This feature is on our roadmap but it's not completed yet. Please stay tuned for
 2. Importer options
 
 == Changelog ==
-Initial version
+= 1.0.1 =
+* Initial version
+
+= 1.0.2 =
+* Compability with Wordpress 5.0
+* Date/Time functions now use strtotime function to parse the dates
+
+

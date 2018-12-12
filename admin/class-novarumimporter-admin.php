@@ -413,9 +413,11 @@ class Novarumimporter_Admin {
 			
 			if(empty($eachData[$this->optionValues['ni_settings_datekey']]))
 			   $date = date("Y-m-d H:i:s");
-		    else	
-			   $date = $eachData[$this->optionValues['ni_settings_datekey']];
-			
+		    else
+			{
+			   $dateRaw = $eachData[$this->optionValues['ni_settings_datekey']];
+			   $date = date("Y-m-d H:i:s",strtotime($dateRaw));
+			}
 			$post_status = $eachData[$this->optionValues['ni_settings_post_status']];
 			
 			$result = wp_insert_post(array(

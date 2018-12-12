@@ -33,7 +33,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Currently plugin version.
  */
-define( 'NOVARUM_IMPORTER_VERSION', '1.0.1' );
+define( 'NOVARUM_IMPORTER_VERSION', '1.0.2' );
 
 /**
  * The code that runs during plugin activation.

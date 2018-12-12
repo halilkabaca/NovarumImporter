@@ -70,7 +70,7 @@ class Novarumimporter {
 		if ( defined( 'NOVARUM_IMPORTER_VERSION' ) ) {
 			$this->version = NOVARUM_IMPORTER_VERSION;
 		} else {
-			$this->version = '1.0.1';
+			$this->version = '1.0.2';
 		}
 		$this->plugin_name = 'novarumimporter';
 
